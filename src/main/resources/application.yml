@@ -1,0 +1,13 @@
+server:
+  port: 8086
+
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            baity-backend:
+              - uri: http://127.0.0.1:8081
+                metadata:
+                  management.context-path: /actuator
