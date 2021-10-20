@@ -32,13 +32,13 @@ spring:
     host: 127.0.0.1
     port: 2525
     protocol: smtp
-      ui:
-        cache:
-          no-cache: true
-        template-location: file:../../spring-boot-admin-server-ui/target/dist/
-        resource-locations: file:../../spring-boot-admin-server-ui/target/dist/
-        cache-templates: false
-        extension-resource-locations: file:../spring-boot-admin-sample-custom-ui/target/dist/
-      client:
-        username: admin
-        password: admin
+    ui:
+      cache:
+        no-cache: true
+      template-location: file:../../spring-boot-admin-server-ui/target/dist/
+      resource-locations: file:../../spring-boot-admin-server-ui/target/dist/
+      cache-templates: false
+      extension-resource-locations: file:../spring-boot-admin-sample-custom-ui/target/dist/
+    client:
+      username: admin
+      password: admin
