@@ -1,0 +1,47 @@
+server:
+  use-forward-headers: true
+  forward-headers-strategy: native
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            front-backend:
+              - uri: https://yoursite.com:443
+                metadata:
+                  management.context-path: /actuator
+                  health.path: build-info.properties
+            tutorial-backend:
+              - uri: https://yoursite.com:443/backend
+                service-id: backend
+                metadata:
+                  management.context-path: /actuator
+  security:
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      notify:
+        mail:
+          from: Spring Boot Admin <noreply@test.com>
+          to: imad@gmail.com
+          cc: laghrissi@gmail.com
+  mail:
+    username: adresse.noreply@test.com
+    password:
+    host: 127.0.0.1
+    port: 2525
+    protocol: smtp
+      ui:
+        public-url: https://springboot-dashboard.cloud.net
+        cache:
+          no-cache: true
+        template-location: file:../../spring-boot-admin-server-ui/target/dist/
+        resource-locations: file:../../spring-boot-admin-server-ui/target/dist/
+        cache-templates: false
+        extension-resource-locations: file:../spring-boot-admin-sample-custom-ui/target/dist/
+      client:
+        username: admin
+        password: admin

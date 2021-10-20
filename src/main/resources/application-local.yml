@@ -7,7 +7,7 @@ spring:
       client:
         simple:
           instances:
-            baity-backend:
+            tutorial-front:
               - uri: http://127.0.0.1:8081
                 metadata:
                   management.context-path: /actuator
@@ -21,6 +21,17 @@ spring:
       password: admin
   boot:
     admin:
+      notify:
+        mail:
+          from: Spring Boot Admin <noreply@test.com>
+          to: imad@gmail.com
+          cc: laghrissi@gmail.com
+  mail:
+    username: adresse.noreply@test.com
+    password:
+    host: 127.0.0.1
+    port: 2525
+    protocol: smtp
       ui:
         cache:
           no-cache: true
