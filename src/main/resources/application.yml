@@ -11,3 +11,23 @@ spring:
               - uri: http://127.0.0.1:8081
                 metadata:
                   management.context-path: /actuator
+            tutorial-backend:
+              - uri: http://127.0.0.1:9090
+                metadata:
+                  management.context-path: /actuator
+  security:
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      ui:
+        cache:
+          no-cache: true
+        template-location: file:../../spring-boot-admin-server-ui/target/dist/
+        resource-locations: file:../../spring-boot-admin-server-ui/target/dist/
+        cache-templates: false
+        extension-resource-locations: file:../spring-boot-admin-sample-custom-ui/target/dist/
+      client:
+        username: admin
+        password: admin
