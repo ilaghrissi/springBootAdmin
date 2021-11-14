@@ -1,4 +1,4 @@
-# Spring Boot Admin Esolution
+# Spring Boot Admin
 
 ### Run
 mvn spring-boot:run -Dspring-boot.run.profiles=local
